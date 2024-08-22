@@ -1,3 +1,4 @@
+import 'package:bookly_app/Features/home/presentation/views/widgets/best_seller_item.dart';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
@@ -9,35 +10,26 @@ class HomeBottomSide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 24, right: 24, top: 48, bottom: 24),
+      padding: const EdgeInsets.only(
+        left: 24,
+        right: 24,
+        top: 48,
+      ),
       child: Column(
         children: [
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
                 "Best Seller",
-                style: Styles.titleMedium,
+                style: Styles.textStyle18,
               ),
             ],
           ),
-          SizedBox(
-            height: 105,
-            child: Row(
-              children: [
-                AspectRatio(
-                  aspectRatio: 70 / 110,
-                  child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        image: const DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage(AssetsData.testImage))),
-                  ),
-                ),
-              ],
-            ),
-          )
+          const SizedBox(
+            height: 12,
+          ),
+          const BestSellerItem()
         ],
       ),
     );
