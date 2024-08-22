@@ -1,3 +1,4 @@
+import 'package:bookly_app/Features/home/presentation/views/home_view.dart';
 import 'package:bookly_app/Features/splash/presentation/views/splash_view.dart';
 import 'package:bookly_app/constants.dart';
 import 'package:flutter/material.dart';
@@ -15,11 +16,13 @@ class BooklyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(
-          scaffoldBackgroundColor: kPrimaryColor,
-          textTheme:
-              GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme)),
-      home: const SplashView(),
+      theme: ThemeData.dark()
+          .copyWith(
+              scaffoldBackgroundColor: kPrimaryColor,
+              textTheme: GoogleFonts.montserratTextTheme(
+                  Typography(platform: TargetPlatform.iOS).white))
+          .copyWith(),
+      home: const HomeView(),
     );
   }
 }

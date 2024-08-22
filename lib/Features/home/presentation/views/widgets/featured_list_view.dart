@@ -12,7 +12,7 @@ class FeaturedListView extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 24),
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
-            return FeaturedListViewItem();
+            return const FeaturedListViewItem();
           },
           separatorBuilder: (context, index) {
             return const SizedBox(

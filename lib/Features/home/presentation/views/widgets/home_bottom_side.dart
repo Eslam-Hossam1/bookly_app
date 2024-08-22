@@ -9,11 +9,11 @@ class HomeBottomSide extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(
-        left: 24,
-        right: 24,
-        top: 48,
+    return const Padding(
+      padding: EdgeInsets.only(
+        left: 30,
+        right: 30,
+        top: 51,
       ),
       child: Column(
         children: [
@@ -27,7 +27,7 @@ class HomeBottomSide extends StatelessWidget {
             ],
           ),
           const SizedBox(
-            height: 12,
+            height: 20,
           ),
           const BestSellerItem()
         ],
