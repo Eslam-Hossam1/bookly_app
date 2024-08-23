@@ -1,15 +1,12 @@
 import 'package:bookly_app/Features/home/presentation/views/widgets/best_seller_item.dart';
 import 'package:flutter/material.dart';
 
-class BestSellerSliverList extends StatelessWidget {
-  const BestSellerSliverList({
-    super.key,
-  });
+class SearchBooksListView extends StatelessWidget {
+  const SearchBooksListView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SliverList.separated(
-      itemCount: 20,
+    return ListView.separated(
       itemBuilder: (context, index) {
         return const VerticalListBookItem();
       },
@@ -18,6 +15,7 @@ class BestSellerSliverList extends StatelessWidget {
           height: 8,
         );
       },
+      itemCount: 20,
     );
   }
 }
