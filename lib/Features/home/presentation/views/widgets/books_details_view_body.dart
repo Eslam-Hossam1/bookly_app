@@ -1,9 +1,11 @@
+import 'package:bookly_app/Features/home/presentation/views/widgets/book_details_section.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/books_action.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/custom_book_image.dart';
+import 'package:bookly_app/Features/home/presentation/views/widgets/similar_box.dart';
+import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/styles.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsBody extends StatelessWidget {
@@ -11,39 +13,23 @@ class BookDetailsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const CustomBookDetailsAppBar(),
-        Padding(
-          padding: EdgeInsets.symmetric(
-              horizontal: MediaQuery.of(context).size.width * 0.28),
-          child: const CustomBookImage(),
+    return const CustomScrollView(
+      slivers: [
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: Column(
+            children: [
+              CustomBookDetailsAppBar(),
+              BookDetailsSection(),
+              Expanded(
+                child: SizedBox(
+                  height: 50,
+                ),
+              ),
+              SimilarBox()
+            ],
+          ),
         ),
-        const SizedBox(
-          height: 43,
-        ),
-        const Text(
-          "The Jungle Book",
-          style: Styles.textStyle30,
-        ),
-        const SizedBox(
-          height: 6,
-        ),
-        Text(
-          "Rudyard Kipling",
-          style: Styles.textStyle18.copyWith(
-              fontWeight: FontWeight.w600, color: Colors.white.withOpacity(.7)),
-        ),
-        const SizedBox(
-          height: 16,
-        ),
-        const BookRating(
-          mainAxisAlignment: MainAxisAlignment.center,
-        ),
-        const SizedBox(
-          height: 37,
-        ),
-        const BooksAction(),
       ],
     );
   }
