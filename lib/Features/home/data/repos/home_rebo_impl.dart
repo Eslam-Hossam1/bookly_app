@@ -4,6 +4,7 @@ import 'package:bookly_app/Features/home/data/repos/home_rebo.dart';
 import 'package:bookly_app/core/errors/failures.dart';
 import 'package:bookly_app/core/utils/api_service.dart';
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 
 class HomeReboImpl implements HomeRebo {
   final ApiService apiService;
@@ -21,7 +22,10 @@ class HomeReboImpl implements HomeRebo {
       List<BookModel> books = bookApiResponse.books!;
       return right(books);
     } catch (e) {
-      return left(ServiceFailure());
+      if (e is DioException) {
+        return left(ServerFailure.fromDioException(e));
+      }
+      return left(ServerFailure(e.toString()));
     }
   }
 
