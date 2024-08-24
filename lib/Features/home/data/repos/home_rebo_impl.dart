@@ -30,8 +30,21 @@ class HomeReboImpl implements HomeRebo {
   }
 
   @override
-  Future<Either<Failure, List<BookModel>>> fetchFeuturedBooks() {
-    // TODO: implement fetchFeuturedBooks
-    throw UnimplementedError();
+  Future<Either<Failure, List<BookModel>>> fetchFeuturedBooks() async {
+    try {
+      BookApiResponse bookApiResponse = BookApiResponse.fromJson(
+        await apiService.get(
+          endpoint:
+              "volumes?q=subject:money&filter=free-ebooks&key=AIzaSyDhyTUznXiLfEcJpuRexRWCZkIbygF1h5c",
+        ),
+      );
+      List<BookModel> books = bookApiResponse.books!;
+      return right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioException(e));
+      }
+      return left(ServerFailure(e.toString()));
+    }
   }
 }
