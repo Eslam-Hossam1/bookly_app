@@ -16,14 +16,14 @@ class VerticalListBookItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        context.push(AppRouter.kDetailsView);
+        context.push(AppRouter.kDetailsView, extra: bookModel);
       },
       child: SizedBox(
         height: 120,
         child: Row(
           children: [
             CustomBookImage(
-                imageUrl: bookModel.volumeInfo.imageLinks.thumbnail),
+                imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? ""),
             const SizedBox(
               width: 20,
             ),
