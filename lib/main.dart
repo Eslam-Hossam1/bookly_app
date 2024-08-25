@@ -1,6 +1,6 @@
 import 'package:bookly_app/Features/home/data/repos/home_rebo_impl.dart';
-import 'package:bookly_app/Features/home/presentation/manger/featured_books_cubit/featured_books_cubit.dart';
-import 'package:bookly_app/Features/home/presentation/manger/newest_books_cubit/newest_books_cubit.dart';
+import 'package:bookly_app/Features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
+import 'package:bookly_app/Features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
 import 'package:bookly_app/Features/home/presentation/views/home_view.dart';
 import 'package:bookly_app/Features/splash/presentation/views/splash_view.dart';
 import 'package:bookly_app/constants.dart';
