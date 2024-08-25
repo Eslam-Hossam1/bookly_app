@@ -15,7 +15,7 @@ class SimilarBooksListView extends StatelessWidget {
         itemCount: 20,
         itemBuilder: (context, index) {
           return const CustomBookImage(
-            image:
+            imageUrl:
                 "https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg",
           );
         },

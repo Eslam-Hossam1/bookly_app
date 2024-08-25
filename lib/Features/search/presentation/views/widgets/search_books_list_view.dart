@@ -1,4 +1,4 @@
-import 'package:bookly_app/Features/home/presentation/views/widgets/best_seller_item.dart';
+import 'package:bookly_app/Features/home/presentation/views/widgets/vertical_list_book_item.dart';
 import 'package:flutter/material.dart';
 
 class SearchBooksListView extends StatelessWidget {
@@ -8,7 +8,8 @@ class SearchBooksListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.separated(
       itemBuilder: (context, index) {
-        return const VerticalListBookItem();
+        //return const VerticalListBookItem();
+        return Text("data");
       },
       separatorBuilder: (context, index) {
         return const SizedBox(

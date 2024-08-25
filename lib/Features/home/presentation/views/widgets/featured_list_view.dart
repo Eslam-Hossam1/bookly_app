@@ -22,7 +22,8 @@ class FeaturedListView extends StatelessWidget {
                 physics: const BouncingScrollPhysics(),
                 itemBuilder: (context, index) {
                   return CustomBookImage(
-                    image: state.books[index].volumeInfo.imageLinks.thumbnail,
+                    imageUrl:
+                        state.books[index].volumeInfo.imageLinks.thumbnail,
                   );
                 },
                 separatorBuilder: (context, index) {
