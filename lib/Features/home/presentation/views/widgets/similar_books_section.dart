@@ -4,8 +4,8 @@ import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
-class SimilarBox extends StatelessWidget {
-  const SimilarBox({super.key});
+class SimilarBooksSection extends StatelessWidget {
+  const SimilarBooksSection({super.key});
 
   @override
   Widget build(BuildContext context) {
