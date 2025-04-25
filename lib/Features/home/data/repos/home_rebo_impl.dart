@@ -3,6 +3,7 @@ import 'package:bookly_app/core/models/book_model/book_model.dart';
 import 'package:bookly_app/Features/home/data/repos/home_rebo.dart';
 import 'package:bookly_app/core/errors/failures.dart';
 import 'package:bookly_app/core/utils/api_service.dart';
+import 'package:bookly_app/core/utils/env_config.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
@@ -18,7 +19,7 @@ class HomeReboImpl implements HomeRebo {
       BookApiResponse bookApiResponse = BookApiResponse.fromJson(
         await apiService.get(
           endpoint:
-              "volumes?q=subject:health&key=AIzaSyDhyTUznXiLfEcJpuRexRWCZkIbygF1h5c",
+              "volumes?q=subject:health&key=${EnvConfig.apiKey}",
         ),
       );
       List<BookModel> books = bookApiResponse.books!;
@@ -37,7 +38,7 @@ class HomeReboImpl implements HomeRebo {
       BookApiResponse bookApiResponse = BookApiResponse.fromJson(
         await apiService.get(
           endpoint:
-              "volumes?q=subject:sports&filter=free-ebooks&key=AIzaSyDhyTUznXiLfEcJpuRexRWCZkIbygF1h5c",
+              "volumes?q=subject:sports&filter=free-ebooks&key=${EnvConfig.apiKey}",
         ),
       );
       List<BookModel> books = bookApiResponse.books ?? [];
